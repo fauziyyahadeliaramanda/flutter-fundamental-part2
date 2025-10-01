@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            // teks judul & subjudul
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -44,6 +43,18 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    // Bagian button row (pakai fungsi _buildButtonColumn)
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Nama dan NIM Anda',
       home: Scaffold(
@@ -52,10 +63,34 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            titleSection, // tampilkan title row di body
+            titleSection,
+            buttonSection,
+          
           ],
         ),
       ),
+    );
+  }
+
+  // Fungsi buat button column
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
