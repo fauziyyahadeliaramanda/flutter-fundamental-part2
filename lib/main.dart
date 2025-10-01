@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    // Bagian button row (pakai fungsi _buildButtonColumn)
+    // Bagian button row
     Color color = Theme.of(context).primaryColor;
 
     Widget buttonSection = Row(
@@ -55,17 +55,29 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    // Praktikum 3: Bagian text section
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+       'Wisata Gunung di Batu merupakan salah satu destinasi alam yang populer di Malang, '
+    'dikenal dengan pemandangan alamnya yang indah, udara sejuk, dan jalur pendakian yang menantang. '
+    'Tempat ini cocok untuk pecinta alam, fotografer, dan wisata keluarga. '
+    'Hasil pekerjaan ini dibuat oleh Fauziyyah Adelia Ramanda, NIM 2341760145. ',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Nama dan NIM Anda',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter layout demo'),
+          title: const Text('Fauziyyah 2341760145'),
         ),
-        body: Column(
+        body: ListView(
           children: [
             titleSection,
             buttonSection,
-          
+            textSection, // <--- ditambahkan di sini
           ],
         ),
       ),

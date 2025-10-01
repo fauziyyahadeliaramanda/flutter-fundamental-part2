@@ -1,4 +1,4 @@
 # Hasil Screenshot
 
-Berikut adalah hasil tampilan aplikasi Flutter setelah Implementasi button row
-![Hasil Screenshot](images/03.png)
+Berikut adalah hasil tampilan aplikasi Flutter setelah Implementasi text section
+![Hasil Screenshot](images/04.png)
